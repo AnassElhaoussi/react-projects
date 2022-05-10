@@ -24,6 +24,11 @@ code {
     color: blue;
 }
 
+.tweets {
+  display: flex;
+  gap: 3rem;
+}
+
 .tweet h1 {
     color: rgb(255, 148, 166);
 }

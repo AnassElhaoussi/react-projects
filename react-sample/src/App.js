@@ -7,9 +7,12 @@ function myApp(){
   return (
 
     <div className="app">
-      
       <h1 className='title'>Hello there are some tweets :</h1>
-      <Tweets/>
+      <div className='tweets'>
+        <Tweets/>
+        <Tweets/>
+        <Tweets/>
+      </div>
 
     </div>
   )
