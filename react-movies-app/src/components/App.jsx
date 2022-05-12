@@ -10,12 +10,13 @@ const apiKey = "6919cef0"
 
 const App = () => {
 
-    useEffect(() => {
-        fetchMovies('Batman')
-    }, [])
+    
 
     const [movies, setMovies ] = useState([])
+    const [search, setSearch] = useState()
 
+
+    
 
     const fetchMovies = async (title) => {
         const response = await fetch(`${BASE_URL}?apiKey=${apiKey}&s=${title}`)
@@ -25,18 +26,30 @@ const App = () => {
 
     }
 
-    
+    useEffect(() => {
+        fetchMovies('Batman')
+    }, [])
 
+    if(search == ''){
+        fetchMovies('Batman')
+    }
+
+
+    
     return (
         <div className='container'>
             <h1 className='title'>MovieLand</h1>
             <div className='input-field'>
                 <input 
                 type="text"
+                value={search}
                 placeholder='Search for movies..'
+                onChange={(e) => setSearch(e.target.value)}
                 />
+                <div className='icon' onClick={() => fetchMovies(search)}>
+                    <FontAwesomeIcon icon={faMagnifyingGlass}/>
+                </div>
                 
-                <FontAwesomeIcon icon={faMagnifyingGlass}/>
             </div>
 
             {
@@ -51,6 +64,11 @@ const App = () => {
                     ) : (
                         <h2 className='noResults'>No results found</h2>
                     )
+            }
+
+            {
+
+
             }
             
         </div>
