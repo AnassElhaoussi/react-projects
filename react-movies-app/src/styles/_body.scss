@@ -46,7 +46,7 @@ body {
             color: $titleColor;
             right: 10%;
             top: 20%;
-    
+            cursor: pointer;
         }
     }
 
@@ -63,10 +63,12 @@ body {
           width: 16rem;
           @include flexColumn();
           gap: 0.5rem;
+          position: relative;
 
           img {
               height: 23rem;
               border-radius: 0.4rem;
+              transition: 0.6s ease;
               
           }
 
@@ -79,6 +81,25 @@ body {
              color: $titleColor;
              font-size: 1em;
           }
+
+          .date {
+              position: absolute;
+              top: 5%;
+              left: 5%;
+              transform: scale(0);
+              color: $titleColor;
+              transition: 0.4s ease-in-out;
+              transform-origin: top right;
+          }
+
+          img:hover {
+            opacity: 0.3;
+          }
+
+          &:hover .date {
+              transform: scale(1);
+          }
+
         }
         
     }

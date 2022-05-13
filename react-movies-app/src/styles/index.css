@@ -48,6 +48,7 @@ body {
   color: rgba(255, 214, 168, 0.849);
   right: 10%;
   top: 20%;
+  cursor: pointer;
 }
 
 .container .movies-cards {
@@ -74,11 +75,14 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.5rem;
+  position: relative;
 }
 
 .container .movies-cards .card img {
   height: 23rem;
   border-radius: 0.4rem;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
 }
 
 .container .movies-cards .card p {
@@ -89,6 +93,28 @@ body {
 .container .movies-cards .card h2 {
   color: rgba(255, 214, 168, 0.849);
   font-size: 1em;
+}
+
+.container .movies-cards .card .date {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  color: rgba(255, 214, 168, 0.849);
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.container .movies-cards .card img:hover {
+  opacity: 0.3;
+}
+
+.container .movies-cards .card:hover .date {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .noResults {

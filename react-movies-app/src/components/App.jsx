@@ -10,7 +10,6 @@ const apiKey = "6919cef0"
 
 const App = () => {
 
-    
 
     const [movies, setMovies ] = useState([])
     const [search, setSearch] = useState()
@@ -25,12 +24,13 @@ const App = () => {
 
     }
 
+
+
     useEffect(() => {
         fetchMovies('Batman')
     }, [search])
 
-    
-    
+ 
     
     return (
         <div className='container'>
@@ -53,7 +53,7 @@ const App = () => {
                     ? (
                         <div className='movies-cards'>
                             {movies.map(movie => (
-                                <MovieCard name={movie.Title} image={movie.Poster} />
+                                <MovieCard name={movie.Title} image={movie.Poster} year={movie.Year}/>
                             ))}
 
                         </div>
@@ -70,5 +70,7 @@ const App = () => {
         </div>
     )
 }
+
+
 
 export default App;
