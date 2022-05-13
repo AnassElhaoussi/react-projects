@@ -16,7 +16,6 @@ const App = () => {
     const [search, setSearch] = useState()
 
 
-    
 
     const fetchMovies = async (title) => {
         const response = await fetch(`${BASE_URL}?apiKey=${apiKey}&s=${title}`)
@@ -28,13 +27,10 @@ const App = () => {
 
     useEffect(() => {
         fetchMovies('Batman')
-    }, [])
+    }, [search])
 
-    if(search == ''){
-        fetchMovies('Batman')
-    }
-
-
+    
+    
     
     return (
         <div className='container'>
