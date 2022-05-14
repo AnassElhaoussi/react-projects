@@ -51,11 +51,22 @@ body {
   color: #006eff;
 }
 
-.main-part input {
+.main-part .input-field {
+  position: relative;
+}
+
+.main-part .input-field input {
   padding: 0.3rem 6rem;
   outline: none;
   border: none;
   border-radius: 0.4rem;
+}
+
+.main-part .input-field svg {
+  position: absolute;
+  right: 5%;
+  top: 20%;
+  cursor: pointer;
 }
 
 .recipe-card {
@@ -73,6 +84,12 @@ body {
 
 .recipe-card .card {
   position: relative;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 0 0 1rem;
+  max-width: 20rem;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .recipe-card .card img {
@@ -84,7 +101,7 @@ body {
 
 .recipe-card .card .meal-name {
   color: #006eff;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
 }
 
@@ -100,16 +117,25 @@ body {
           transform: scale(0);
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
+  color: white;
   -webkit-transform-origin: top right;
           transform-origin: top right;
 }
 
 .recipe-card .card:hover img {
-  opacity: 0.4;
+  opacity: 0.3;
 }
 
 .recipe-card .card:hover .extra-infos p {
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+.recipe-card .card:hover {
+  background: none;
+}
+
+.info {
+  text-align: center;
 }
 /*# sourceMappingURL=index.css.map */

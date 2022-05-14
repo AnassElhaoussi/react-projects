@@ -33,17 +33,32 @@ body {
     gap: 1rem;
     text-align: center;
     align-items: center;
+   
 
     .title {
         color: $titleColor;
     }
 
-    input {
-        padding: 0.3rem 6rem;
-        outline: none;
-        border: none;
-        border-radius: 0.4rem;
+    .input-field  {
+        position: relative;
+
+        input {
+            padding: 0.3rem 6rem;
+            outline: none;
+            border: none;
+            border-radius: 0.4rem;
+        }
+    
+        svg {
+            position: absolute;
+            right: 5%;
+            top: 20%;
+            cursor: pointer;
+        }
+
     }
+
+    
 }
 
 
@@ -56,16 +71,25 @@ body {
 
     .card {
         position: relative;
+        background-color: $textColor;
+        border-radius: 1rem;
+        padding: 0 0 1rem;
+        max-width: 20rem;
+        
+        transition: 0.5s ease;
+
         img {
             max-width: 20rem;
             border-radius: 1rem;
             transition: 0.5s ease;
+            
         }
 
         .meal-name {
             color: $titleColor;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
+            
         }
 
         .extra-infos p{
@@ -78,6 +102,7 @@ body {
             font-weight: 650;
             transform: scale(0);
             transition: 0.5s ease;
+            color: $textColor;
             transform-origin: top right;
 
         }
@@ -85,12 +110,22 @@ body {
     }
 
     .card:hover img {
-        opacity: 0.4;
+        opacity: 0.3;
+       
     }
 
     .card:hover .extra-infos p {
         transform: scale(1);
     }
 
+    .card:hover {
+        background: none;
+    }
+
 
 }
+
+.info {
+    text-align: center;
+}
+
