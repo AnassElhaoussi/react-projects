@@ -9,7 +9,7 @@
 
 body {
   background-color: #f3f3f3;
-  padding: 2rem 0;
+  padding: 2rem 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,6 +42,9 @@ body {
           flex-direction: column;
   gap: 1rem;
   text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main-part .title {
@@ -53,5 +56,60 @@ body {
   outline: none;
   border: none;
   border-radius: 0.4rem;
+}
+
+.recipe-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.recipe-card .card {
+  position: relative;
+}
+
+.recipe-card .card img {
+  max-width: 20rem;
+  border-radius: 1rem;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.recipe-card .card .meal-name {
+  color: #006eff;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.recipe-card .card .extra-infos p {
+  gap: 4rem;
+  opacity: 0.8;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-size: 1.2rem;
+  font-weight: 650;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.recipe-card .card:hover img {
+  opacity: 0.4;
+}
+
+.recipe-card .card:hover .extra-infos p {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 /*# sourceMappingURL=index.css.map */

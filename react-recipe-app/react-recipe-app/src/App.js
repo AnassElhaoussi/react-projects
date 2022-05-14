@@ -35,7 +35,7 @@ function App() {
       <div className='recipes-seciton'>
         <div className='recipe-card'>
          {recipes.map(recipe => (
-           <RecipeCard image={recipe.strMealThumb} name={recipe.strMeal} area={recipe.strArea} category={recipe.strCategory} />
+           <RecipeCard image={recipe.strMealThumb} name={recipe.strMeal} area={recipe.strArea}  />
          ))}
         </div>
       </div>

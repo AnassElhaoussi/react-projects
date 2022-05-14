@@ -17,7 +17,7 @@
 
 body {
     background-color: $backgroundColor;
-    padding: 2rem 0;
+    padding: 2rem 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,6 +32,7 @@ body {
     @include flexColumn();
     gap: 1rem;
     text-align: center;
+    align-items: center;
 
     .title {
         color: $titleColor;
@@ -43,4 +44,53 @@ body {
         border: none;
         border-radius: 0.4rem;
     }
+}
+
+
+.recipe-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+    text-align: center;
+
+    .card {
+        position: relative;
+        img {
+            max-width: 20rem;
+            border-radius: 1rem;
+            transition: 0.5s ease;
+        }
+
+        .meal-name {
+            color: $titleColor;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .extra-infos p{
+            gap: 4rem;
+            opacity: 0.8;
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            font-size: 1.2rem;
+            font-weight: 650;
+            transform: scale(0);
+            transition: 0.5s ease;
+            transform-origin: top right;
+
+        }
+
+    }
+
+    .card:hover img {
+        opacity: 0.4;
+    }
+
+    .card:hover .extra-infos p {
+        transform: scale(1);
+    }
+
+
 }

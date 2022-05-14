@@ -5,11 +5,11 @@ const RecipeCard = ({image, name, area, category}) => {
     return (
         <div className='card'>
             <img src={image} alt="" />
-            <p>{name}</p>
+            <p className='meal-name'>{name}</p>
 
             <div className='extra-infos'>
                 <p className='area'>{area}</p>
-                <p className='category'>{category}</p>
+
             </div>
         </div>
 
