@@ -14,6 +14,7 @@ const App = () => {
     const [movies, setMovies ] = useState([])
     const [search, setSearch] = useState()
 
+    
 
 
     const fetchMovies = async (title) => {
@@ -23,7 +24,6 @@ const App = () => {
         console.log(data.Search);
 
     }
-
 
 
     useEffect(() => {
@@ -42,6 +42,8 @@ const App = () => {
                 placeholder='Search for movies..'
                 onChange={(e) => setSearch(e.target.value)}
                 />
+
+                
                 <div className='icon' onClick={() => fetchMovies(search)}>
                     <FontAwesomeIcon icon={faMagnifyingGlass}/>
                 </div>
@@ -53,7 +55,7 @@ const App = () => {
                     ? (
                         <div className='movies-cards'>
                             {movies.map(movie => (
-                                <MovieCard name={movie.Title} image={movie.Poster} year={movie.Year}/>
+                                <MovieCard name={movie.Title} image={movie.Poster} year={movie.Year} type={movie.Type.toUpperCase()}/>
                             ))}
 
                         </div>
@@ -62,13 +64,10 @@ const App = () => {
                     )
             }
 
-            {
-
-
-            }
             
         </div>
     )
+
 }
 
 

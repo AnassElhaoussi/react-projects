@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-const MovieCard = ({name, image, year}) => {
+const MovieCard = ({name, image, year, type}) => {
 
     return (
         <div className='card'>
@@ -9,7 +9,7 @@ const MovieCard = ({name, image, year}) => {
             src={image !== "N/A" ? image: 'https://via.placeholder.com/400'} 
             />
 
-            <p>MOVIE</p>
+            <p>{type}</p>
             <h2>{name}</h2>
             <p className='date'>{year}</p>
         </div>
