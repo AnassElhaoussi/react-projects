@@ -26,6 +26,7 @@ function App() {
     fetchData('A')
   },[search])
 
+
   return (
     <div className="App">
       <div className='main-part'>
@@ -48,7 +49,6 @@ function App() {
       <div className='recipes-seciton'>
         
          {
-         
             recipes?.length  > 0
             ? (
               <div className='recipe-card'>
@@ -59,11 +59,7 @@ function App() {
             
             ) : (
               <h2 className='info'>No results found</h2>
-
             )
-
-         
-         
          
          }
         

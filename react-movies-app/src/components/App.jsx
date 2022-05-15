@@ -14,7 +14,6 @@ const App = () => {
     const [movies, setMovies ] = useState([])
     const [search, setSearch] = useState()
 
-    
 
 
     const fetchMovies = async (title) => {
