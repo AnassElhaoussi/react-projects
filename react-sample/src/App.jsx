@@ -1,23 +1,19 @@
 
 import React, { useState } from 'react'; 
+import {BrowserRouter, Route,Routes, Switch} from 'react-router-dom'
 import Tweets from './Tweets'
-
 
 function App(){
   
-  const [userInfos, setUserInfos] = useState([
-    {name: "Anass", message: "Hellosae c there"},     
-    {name: "Josh", message: "Plean you help me"},
-    {name: "John", message: "Wassup"}
-    
-  ])
 
   
   return (
-  <div className='app'>
-      {userInfos.map(userInfo => (
-        <Tweets name={userInfo.name} message={userInfo.message}/>
-        ))}
+    <div className='App'>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/tweets" element={<Tweets/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 

@@ -1,12 +1,12 @@
 
 import React from 'react'
 
-function Tweets({name, message}){
+function Tweets(){
 
     return(
         <div className='tweet'>
-            <h1>{name}</h1>
-            <p>{message}</p>
+            <h1>My tweet</h1>
+            <p>My message</p>
         </div>
     )
 
