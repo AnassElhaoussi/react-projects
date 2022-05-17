@@ -1,33 +1,33 @@
 
-import React, { useState } from 'react'; 
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-import Nav from './Nav'
-import About from './About'
-import Tweets from './Tweets'
+import React, { useEffect, useState } from 'react'; 
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import NavBar from './NavBar';
+import Tweets from './Tweets';
+import Recipes from './Recipes';
+import RecipeElement from './Item'
 
 function App(){
-  
   return (
-    <div className='App'>
-      <Router>
-        <Nav />   
-        <Routes> 
-          <Route path='/about' element={<About />}/>
-          <Route path="/tweets" element={<Tweets/>} />
-          <Route path='/' element={<HomePage />} />
-        </Routes>  
-      </Router>
-    </div>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path='/tweets' element={<Tweets />} />
+        <Route path='/recipes' element={<Recipes />} />
+        <Route path='/recipes/item' element={<RecipeElement />} />
+        <Route path='/' element={<HomePage />} />
+        
+      </Routes>
+    </Router>
+      
   )
-
-  
 }
+
+
 
 const HomePage = () => {
   return (
-    <h1>Hello it's the home page</h1>
+    <h1>This is the home page</h1>
   )
-
 }
 
 
