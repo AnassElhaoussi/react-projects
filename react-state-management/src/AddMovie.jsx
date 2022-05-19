@@ -3,6 +3,7 @@ import React, {useState, useContext, useEffect} from 'react'
 import { MovieContext } from './MovieContext'
 
 const AddMovie = () => {
+    
     const [name, setName] = useState('')
     const [price, setPrice] = useState('')
     const [movies, setMovies] = useContext(MovieContext)
