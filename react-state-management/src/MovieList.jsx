@@ -16,6 +16,7 @@ const MovieList = () => {
                 <Movie name={movie.name} price={movie.price} key={movie.id} /> 
                 ))}
 
+
         </div>
     )
 }

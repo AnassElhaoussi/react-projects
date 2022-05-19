@@ -6,6 +6,8 @@ const Movie = ({name, price}) => {
         <div className="movie-container">
             <h3>{name}</h3>
             <p>{price}</p>
+            
+            
         </div>
     )
 }
