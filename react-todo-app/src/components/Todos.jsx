@@ -1,17 +1,22 @@
 
-import React from 'react'
+import React, {useState, useContext} from 'react'
+
+import { TodosContext } from './TodosContext';
 
 const Todos = () => {
+
+    const [todo, setTodo] = useContext(TodosContext)
+
+    
     return (
         <div className='todos'>
-            <div className='todo'>
-                <input type="checkbox" name='todo' />
-                <p>This is my first Todo</p>
-            </div>
-            <div className='todo'>
-                <input type="checkbox" name='todo' />
-                <p>This is my first Todo</p>
-            </div>
+            {todo.map(task => (
+                <div className='todo'>
+                    <input type="checkbox" name='todo' />
+                    <p>{task.name}</p>
+                </div>
+            ))}
+            
         </div>
     )
 }

@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: #171625;
+  background-color: #181616;
 }
 
 .nav-bar {
@@ -19,15 +19,31 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0.5rem 3rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: lightgray;
-  background-color: #131325;
+  padding: 1rem 3rem;
+}
+
+.nav-bar h1 {
+  color: #dba155;
+}
+
+.nav-bar p {
+  color: #cacaca;
 }
 
 .todo-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80vh;
+}
+
+.container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,16 +52,32 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 2rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 100vh;
+  background-color: #0f0f0f;
+  padding: 1rem;
+  color: #dba155;
+  border-radius: 0.5rem;
 }
 
-.todos {
+.container .form {
+  position: relative;
+}
+
+.container .form svg {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  cursor: pointer;
+}
+
+.container .form input {
+  text-align: center;
+  padding: 0.5em 4.5em;
+  outline: none;
+  border: none;
+  border-radius: 0.3rem;
+}
+
+.container .todos {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,17 +85,18 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 0.3em;
+  gap: 1rem;
 }
 
-.todo {
+.container .todos .todo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 0.5em;
+  gap: 1rem;
+  color: #cacaca;
 }
 
 /* here is where we can put our color vars */
