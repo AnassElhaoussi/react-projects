@@ -7,7 +7,7 @@ export const TodosProvider = (props) => {
 
     const [todos, setTodos] = useState([
         {
-            name: "",
+            name: "Task example..",
             type: "pending"
         }
     ]) 

@@ -19,6 +19,7 @@ const Form = () => {
     
     const getUserValue = (e) => {
         setValue(e.target.value)
+
     }
 
     const submitTask = (e) => {
