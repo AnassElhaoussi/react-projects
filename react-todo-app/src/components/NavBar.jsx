@@ -4,13 +4,20 @@ import { TodosContext } from './TodosContext';
 
 const NavBar = () => {
 
-    const [todo, setTodo] = useContext(TodosContext) 
+    const [todos, setTodos] = useContext(TodosContext)
+    
+    const newArr = todos.filter(todo => todo.name !== "")
+    
+    
     return (
         <div className='nav-bar'>
             <h1>Todoo</h1>
-            <p>You made {todo.length} todos until now !</p>  
-
+            <p>You made {newArr.length} todos </p>
         </div>
+
+
+
+        
 
     )
 }

@@ -1,5 +1,6 @@
 
-import React, {createContext, useState} from 'react'
+import React, {createContext, useState, useEffect} from 'react'
+
 
 export const TodosContext = createContext()
 
@@ -7,10 +8,12 @@ export const TodosProvider = (props) => {
 
     const [todos, setTodos] = useState([
         {
-            name: "Task example..",
+            name: "",
             type: "pending"
         }
-    ]) 
+    ])
+
+
 
     return(
         <TodosContext.Provider value={[todos, setTodos]}>

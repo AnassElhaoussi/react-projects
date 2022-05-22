@@ -5,17 +5,22 @@ import { TodosContext } from './TodosContext';
 
 const Todos = () => {
 
-    const [todo, setTodo] = useContext(TodosContext)
+    const [todos, setTodos] = useContext(TodosContext)
 
     
     return (
         <div className='todos'>
-            {todo.map(task => (
-                <div className='todo'>
-                    <input type="checkbox" name='todo' />
-                    <p>{task.name}</p>
-                </div>
-            ))}
+            {
+
+                todos.filter(todo => todo.name !== "")
+                .map(task => (
+                    <div className='todo'>
+                        <input type="checkbox" name='todo' />
+                        <p>{task.name}</p>
+                    </div>
+                ))
+            
+            }
             
         </div>
     )

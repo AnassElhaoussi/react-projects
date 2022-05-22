@@ -10,22 +10,28 @@ const Form = () => {
 
     
 
-    const [todo, setTodo] = useContext(TodosContext)
+    const [todos, setTodos] = useContext(TodosContext)
     const [value, setValue] = useState('')
 
     useEffect(() => {
         setValue('')
-    }, [todo])
+    }, [todos])
+ 
+    
     
     const getUserValue = (e) => {
         setValue(e.target.value)
 
     }
 
+
     const submitTask = (e) => {
         e.preventDefault()
-        setTodo(prevTodos => [...prevTodos, {name: value}])
+        setTodos(prevTodos => [...prevTodos, {name: value}])
     }
+
+   
+    
     
 
     return (
