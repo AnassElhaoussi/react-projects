@@ -8,11 +8,12 @@ export const TodosProvider = (props) => {
 
     const [todos, setTodos] = useState([
         {
-            name: "",
+            name: "Task example",
             complete: false
         }
     ])
 
+    
     
     return(
         <TodosContext.Provider value={[todos, setTodos]}>

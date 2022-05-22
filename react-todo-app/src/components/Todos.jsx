@@ -7,21 +7,25 @@ const Todos = () => {
 
     const [todos, setTodos] = useContext(TodosContext)
 
+    const completeTodo = (i) => 
 
-    const completeTodos = (i) => 
         setTodos(
             todos.map(
-                (todo, k) => 
-                k === i
+                (todo, k,) => 
+                i === k 
                 ? {
                     ...todo,
                     complete: !todo.complete
-                }
-                : todo
-            )
+                } : todo
 
+                
+               
+            )
         )
+
     
+        
+
     return (
         <div className='todos'>
             <div className='top-sect'>
@@ -30,13 +34,18 @@ const Todos = () => {
             </div>
 
             {
-                todos.map((task, id, {complete}) => (
+                todos.map((task, id) => (
                     <div className='todo'>
-                        <input type="checkbox"/>
-                        <p  onClick={() => completeTodos(id)} 
-                        style= {{
-                            textDecoration: complete ? "line-through" : ""
-                        }}>{task.name}</p>
+                        <input type="checkbox" onClick={() => completeTodo(id)}/>
+                        <p
+                        style={{
+                            textDecoration: task.complete ? "line-through" : ""
+                        }}
+                        
+                        >{task.name}</p>
+                        
+                        
+                        
                     </div>
                 ))
             
