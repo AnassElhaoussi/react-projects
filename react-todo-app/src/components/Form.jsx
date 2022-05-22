@@ -8,8 +8,6 @@ import { TodosContext } from './TodosContext';
 
 const Form = () => {
 
-    
-
     const [todos, setTodos] = useContext(TodosContext)
     const [value, setValue] = useState('')
 
@@ -27,17 +25,16 @@ const Form = () => {
 
     const submitTask = (e) => {
         e.preventDefault()
-        setTodos(prevTodos => [...prevTodos, {name: value}])
+        setTodos(prevTodos => [...prevTodos, {name: value, complete: false}])
+        console.log(todos);
     }
 
    
     
-    
-
     return (
         <div className='form'>
             <FontAwesomeIcon icon={faListCheck} onClick={submitTask} />
-            <input type="text" placeholder='Your task..' value={value} onChange={getUserValue} />
+            <input type="text" placeholder='Your task..' value={value} onChange={getUserValue}/>
         </div>
     )
 }

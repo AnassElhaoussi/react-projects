@@ -9,12 +9,11 @@ export const TodosProvider = (props) => {
     const [todos, setTodos] = useState([
         {
             name: "",
-            type: "pending"
+            complete: false
         }
     ])
 
-
-
+    
     return(
         <TodosContext.Provider value={[todos, setTodos]}>
             {props.children}

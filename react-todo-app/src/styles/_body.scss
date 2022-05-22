@@ -70,6 +70,24 @@ body {
         flex-direction: column;
         gap: 1rem;
 
+       .top-sect {
+           display: flex;
+           justify-content: space-between;
+           
+           button {
+               padding: 0 1rem;
+               background-color: $textColor;
+               color: white;
+               border-radius: 0.5rem;
+               cursor: pointer;
+               border: none;
+           }
+       }
+
+        .title {
+            color: $whiteColor;
+        }
+
         .todo {
             display: flex;
             align-items: center;

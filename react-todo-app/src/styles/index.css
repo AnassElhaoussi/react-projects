@@ -88,6 +88,28 @@ body {
   gap: 1rem;
 }
 
+.container .todos .top-sect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .todos .top-sect button {
+  padding: 0 1rem;
+  background-color: #dba155;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: none;
+}
+
+.container .todos .title {
+  color: #cacaca;
+}
+
 .container .todos .todo {
   display: -webkit-box;
   display: -ms-flexbox;
