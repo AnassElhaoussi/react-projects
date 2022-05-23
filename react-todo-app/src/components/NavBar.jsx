@@ -5,14 +5,23 @@ import { TodosContext } from './TodosContext';
 const NavBar = () => {
 
     const [todos, setTodos] = useContext(TodosContext)
+   
+    const completedTodos = todos.filter(({complete}) => {
+        return complete == true
+    })
+
     
-    
+
     return (
         <div className='nav-bar'>
             <h1>Todoo</h1>
-            <p>You made {todos.length} todos </p>
+            <div className='infos'>
+                <p>You made {todos.length} todos </p>
+                <p>You completed {completedTodos.length} </p>
+            </div>
+            
+            
         </div>
-
 
 
     )
