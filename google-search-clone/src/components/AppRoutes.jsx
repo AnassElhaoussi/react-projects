@@ -11,7 +11,7 @@ export const AppRoutes = () => {
   return (
     <div className='p-4'>
       <Routes>
-        <Route path='/'>
+        <Route path='/'element={<Results />}>
           
         </Route>
         <Route path='/images' element={<Results />}>
