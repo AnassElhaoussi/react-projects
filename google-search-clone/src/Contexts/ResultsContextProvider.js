@@ -24,13 +24,14 @@ export const ResultsContextProvider = ({children}) => {
         })
 
         const data = await response.json()
+        console.log(data.results);
         
-        setResults(data)
+        setResults(data.results)
         setIsLoading(false)
     }
 
     return (
-        <ResultContext.Provider value={[getResults, results , searchTerm , setSearchTerm , isLoading]}>
+        <ResultContext.Provider value={[getResults ,results, searchTerm, setSearchTerm, isLoading]}>
             {children}
         </ResultContext.Provider>
     )

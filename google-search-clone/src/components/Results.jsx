@@ -8,15 +8,37 @@ import { useResultsContext } from '../Contexts/ResultsContextProvider'
 
 export const Results = () => {
   
-  const {resutls, isLoading, getResults, searchTerm} = useResultsContext()
+  const [getResults, results, searchTerm, setSearchTerm, isLoading] = useResultsContext()
   const location = useLocation()
+
+  useEffect(() => {
+    getResults('/search/q=Elon musk&num=40')
+  }, [])
   
-  if(isLoading){
-    return <Loading />
+  if(isLoading) return <Loading />
+  
+  
+  switch (location.pathname) {
+    case '/':
+      return (
+        <div className='flex flex-wrap justify-between space-y-6 sm:px-56'>
+            {results.map(({title, description}, key) => (
+              <h1>{title}</h1>
+            ))}
+        </div>
+      )
+
+    case '/videos':
+      return "VIDEOS"
+    
+    case '/images':
+      return "IMAGES"
+
+    case '/news':
+      return "NEWS"
+      
+  
+   default:
+     return "ERROR!"
   }
-
-  return (
-    <h1>Results</h1>
-
-  )
 }
