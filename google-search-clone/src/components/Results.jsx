@@ -15,6 +15,7 @@ export const Results = () => {
     getResults(`${location.pathname}/q=Elon musk&num=40`)
   }, [])
   
+
   if(isLoading) return <Loading />
   
   
@@ -45,10 +46,10 @@ export const Results = () => {
         
         <div className='flex flex-wrap item-center gap-8 text-center justify-center'>
           {results?.image_results?.map(({image, link}) => (
-            <div className=' bg-white rounded pb-4 px-4'>
-                <a href={link.href} className='flex flex-col gap-2 hover:scale-105'>
+            <div className='rounded pb-4 px-4'>
+                <a href={link.href} className='flex flex-col gap-2 hover:scale-105 transition-transform'>
                   <img src={image.src} alt="" loading='lazy' className=' h-40 rounded-t' />
-                  <p className='flex flex-wrap text-sm break-words text-blue-800'>{link.title} </p>
+                  <p className='flex flex-wrap text-sm break-words text-blue-800 dark:text-blue-400'>{link.title} </p>
                 </a>
             </div>
 
@@ -57,7 +58,12 @@ export const Results = () => {
       )
 
     case '/news':
-      return "NEWS"
+      return (
+        <div className=''>
+          
+
+        </div>
+      )
       
   
    default:
