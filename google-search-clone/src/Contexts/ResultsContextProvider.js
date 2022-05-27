@@ -24,9 +24,9 @@ export const ResultsContextProvider = ({children}) => {
         })
 
         const data = await response.json()
-        console.log(data.results);
+        console.log(data);
         
-        setResults(data.results)
+        setResults(data)
         setIsLoading(false)
     }
 
