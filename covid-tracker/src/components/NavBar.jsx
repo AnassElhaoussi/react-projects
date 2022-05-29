@@ -16,14 +16,12 @@ const NavBar = ({darkMode, setDarkMode}) => {
       </button>
       <div className='flex flex-wrap py-4 gap-10 font-medium text-blue-400 dark:text-gray-200'>
         <p>
-            <Link to='/countriesData'>
               Filter by country
-            </Link>
+
         </p>
         <p>
-            <Link to='/continentData'>
               Filter by continent
-            </Link>
+
         </p>
       </div>
     </div>
