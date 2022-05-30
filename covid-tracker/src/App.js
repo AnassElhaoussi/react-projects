@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className={darkMode ? 'dark' : ''}>
-      <div className='bg-gray-200 min-h-screen px-5 dark:bg-gray-800'>
+      <div className='bg-gray-200 min-h-screen px-5 dark:bg-gray-800 '>
 
         <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
         <AppRoutes/>

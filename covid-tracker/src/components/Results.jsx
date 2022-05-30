@@ -8,18 +8,22 @@ import { Search } from './Search'
 
 export const Results = () => {
 
+  const [fetchResultsData, isLoading, setIsLoading, results, setResults, search, setSearch] = useResultsContext()
+  const location = useLocation()
+
   useEffect(() => {
     if(location.pathname == "/continentData"){
       fetchResultsData("/continentData")
-    } else if (location.pathname == "/countriesData"){
-      fetchResultsData("/countriesData")
     } else if (location.pathname == "/totalData"){
       fetchResultsData("/totalData")
+    } else if(location.pathname == "/countriesData"){
+      fetchResultsData("/countriesData")
     }
   }, [])
 
-  const [fetchResultsData, isLoading, setIsLoading, results, setResults] = useResultsContext()
-  const location = useLocation()
+
+
+  
 
   if(isLoading){
     return <Loading />
@@ -60,12 +64,12 @@ export const Results = () => {
               <div className='flex flex-wrap gap-10 text-center items-center justify-center py-10'>
                 {results?.map((result, key) => (
                   <div className='bg-white p-4 rounded-lg border-b-4 border-blue-400 dark:border-orange-300' key={key}>
-                    <div className='flex flex-col gap-2 w-40 '>
+                    <div className='flex flex-col gap-2 '>
                       <h1 className='text-2xl font-bold text-blue-400 dark:text-orange-300'>{result.country}</h1>
                       <div className=''>
-                        <p>Total cases : <span className='text-blue-400 dark:text-orange-300'>{result.totalCases}</span></p>
-                        <p>Total deaths : <span className='text-red-500'>{result.totalDeaths}</span></p>
-                        <p>Total recovered : <span className='text-blue-400 dark:text-orange-300'>{result.totalRecovered}</span></p>
+                        <p>Total cases : <span className='text-blue-400 dark:text-orange-300'>{result.totalCases == "" ? 'Not found' : result.totalCases}</span></p>
+                        <p>Total deaths : <span className='text-red-500'>{result.totalDeaths == "" ? 'Not found' : result.totalDeaths}</span></p>
+                        <p>Total recovered : <span className='text-blue-400 dark:text-orange-300'>{result.totalRecovered == "N/A" ? 'Not found' : result.totalRecovered}</span></p>
                       </div>
                     </div>
                   </div>
