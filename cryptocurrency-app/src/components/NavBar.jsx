@@ -7,8 +7,8 @@ import icon from '../images/cryptocurrency.png'
 
 const NavBar = () => {
   return (
-    <div className='bg-black w-1/5'>
-        <div className='flex gap-2 p-3'>
+    <div className=''>
+        <div className='flex gap-2 p-3 bg-slate-900'>
             <Avatar src={icon} size="large" />
             <Typography.Title level={2} className=''>
                 <Link to='/'>CryptoVerse</Link>

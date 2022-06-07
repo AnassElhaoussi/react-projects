@@ -4,7 +4,7 @@ import React from 'react'
 
 const Exchanges = () => {
   return (
-    <div>Exchanges</div>
+    <div className='py-4 px-2'>Exchanges</div>
   )
 }
 

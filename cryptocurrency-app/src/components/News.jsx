@@ -4,7 +4,7 @@ import React from 'react'
 
 const News = () => {
   return (
-    <div>News</div>
+    <div className='py-4 px-2'>News</div>
   )
 }
 

@@ -18,7 +18,7 @@ export const ResultsProvider = ({children}) => {
                 'X-RapidAPI-Host': 'covid-19-coronavirus-statistics2.p.rapidapi.com',
                 'X-RapidAPI-Key': '91d14f2500mshb73a98a500501c0p1a7f2djsnbec755d52b86'
             }
-        })
+        }) 
 
         const data = await response.json()
 
