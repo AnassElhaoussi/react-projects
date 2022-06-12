@@ -1,16 +1,21 @@
 
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/auth'
+import 'firebase/compat/firestore'
 
-export const auth = firebase.initializeApp({
-    apiKey: "AIzaSyBsh07jJ--wegy6IeBy3A5J3Yld2VXTSxM",
-    authDomain: "unichat-3c3b7.firebaseapp.com",
-    projectId: "unichat-3c3b7",
-    storageBucket: "unichat-3c3b7.appspot.com",
-    messagingSenderId: "1006240112192",
-    appId: "1:1006240112192:web:2b06b4a74483e14d26c9a5"
-}).auth()
+const firebaseConfig = {
+    apiKey: "AIzaSyAg85NNghCGRtQ7QZ0cpRJQIN0F0QPDYLE",
+    authDomain: "youchat-bef55.firebaseapp.com",
+    projectId: "youchat-bef55",
+    storageBucket: "youchat-bef55.appspot.com",
+    messagingSenderId: "1045721139293",
+    appId: "1:1045721139293:web:853ac1317d6694955da5b4"
+}
 
+const app = firebase.initializeApp(firebaseConfig)
 
+export const auth = app.auth()
+
+export const db = app.firestore()
 
 
