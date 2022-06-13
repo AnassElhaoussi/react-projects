@@ -19,7 +19,8 @@ export const AuthProvider = ({children}) => {
             if(user){
                 navigate('/chatroom')
                 setUser(user)
-                setLoading(false)                
+                setLoading(false)
+                console.log(user)       
 
             } else {
                 navigate('/')
