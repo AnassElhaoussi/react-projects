@@ -11,20 +11,26 @@ const ChatRoom = () => {
     const user = useAuthContext()
     const [isActive, setIsActive] = useState(false)
     const [messages, setMessages] = useState([])
+
+    
     
 
     
     useEffect(() =>  {
+        
 
         db.collection('messagesdata').orderBy('createdAt').onSnapshot(snapshot => {
-            setMessages(snapshot.docs.map(doc => doc.data()))
+            setMessages (
+                snapshot.docs.map(doc => 
+                    doc.data()
+                )
+            )
+
         })
 
-        console.log(messages)
-        
     }, [])
    
-
+    console.log(messages);
 
 
     const userLogout = () => {
@@ -41,6 +47,8 @@ const ChatRoom = () => {
             return str
         }
     }
+
+
 
 
     return(
@@ -60,14 +68,19 @@ const ChatRoom = () => {
                 </div>
                 <div className='flex flex-col w-screen py-4'>
                     <h1 className='font-bold text-2xl mb-14 text-center'>Chat Room</h1>
-                    <div className='flex flex-col gap-4 text-xl items-start mx-10 mb-10'>
-                        {messages.map(({text, key}) => (
-                            <div key={key} className='bg-gray-200 rounded-md' >
-                                <h1 className='px-4 py-2'>{text}</h1>
-                            </div>     
-                        ))}
-                                       
-                    </div>
+                        <div className='flex flex-col gap-4 text-xl  mx-10 mb-10'>
+                            {messages.map(({createdAt, photoURL, text, uid}) => (
+                                <div className={uid === auth.currentUser.uid ? 'flex justify-end' : 'flex justify-start'} >
+                                    <div className={uid === auth.currentUser.uid ? 'flex items-center gap-4 bg-blue-500 text-white rounded-md px-4 py-2' : 'flex items-center gap-4 bg-gray-200 rounded-md px-4 py-2'}>
+                                        <img src={photoURL} className='h-10 rounded-full'/>
+                                        <h1 className=''>{text}</h1>
+                                    </div>         
+                                </div>         
+                            ))}
+                        </div>               
+                    
+                    
+                    
                     <SendMessage />
                     
                 </div>
