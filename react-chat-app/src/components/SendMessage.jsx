@@ -15,15 +15,17 @@ const SendMessage = () => {
     const sendMessage =  async (e) => {
         e.preventDefault()
 
-        const { photoURL, uid } = user
+        const { displayName ,photoURL, uid} = user
 
         
         
         await db.collection('messagesdata').add({
             text: value,
+            displayName,
             photoURL,
             uid,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+
 
         })
 
