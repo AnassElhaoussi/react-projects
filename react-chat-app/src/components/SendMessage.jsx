@@ -6,7 +6,7 @@ import firebase from 'firebase/compat/app'
 
 
 
-const SendMessage = () => {
+const SendMessage = ({scroll}) => {
 
     const [value, setValue] = useState('')
 
@@ -30,6 +30,7 @@ const SendMessage = () => {
         })
 
         setValue('')
+        scroll.current.scrollIntoView({behavior : 'smooth'})
         
         
     }

@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import { auth } from '../firebase'
 import { LogoutOutlined, MoreOutlined, DeleteOutlined } from '@ant-design/icons'
 import { useAuthContext } from '../Context/AuthContext'
 import { db } from '../firebase'
 import SendMessage from './SendMessage'
+
 
 
 
@@ -13,6 +14,7 @@ const ChatRoom = () => {
     const [isActive, setIsActive] = useState(false)
     const [messages, setMessages] = useState([])
     const namesArr = []
+    const scroll = useRef()
 
     
     messages.map(message => {
@@ -33,8 +35,6 @@ const ChatRoom = () => {
             )
 
         })
-
-        console.log(messages);
 
 
     }, [])
@@ -72,8 +72,8 @@ const ChatRoom = () => {
                 </div>  
                     <MoreOutlined onClick={() => setIsActive(!isActive)}/>
             </div>
-            <div className='flex'>
-                <div className='h-100 bg-gray-100 w-60' style={{display: !isActive ? "none" : "block"}}>
+            <div className='min-h-full flex'>
+                <div className='bg-gray-100 w-60' style={{display: !isActive ? "none" : "block"}}>
                     <h1 className='p-3'>Hello {findFirstWord(user.displayName)} 👋</h1>
                     <div className='flex flex-col gap-3 p-3'>
                         <p className='text-xl text-blue-500'>Users :</p>
@@ -100,7 +100,8 @@ const ChatRoom = () => {
                     
                     
                     
-                    <SendMessage />
+                    <SendMessage scroll={scroll} />
+                    <div ref={scroll}></div>
                     
                 </div>
             </div>
