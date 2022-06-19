@@ -26,7 +26,6 @@ const SendMessage = ({scroll}) => {
             uid,
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
 
-
         })
 
         setValue('')

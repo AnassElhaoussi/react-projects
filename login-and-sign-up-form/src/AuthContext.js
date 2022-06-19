@@ -1,45 +1,46 @@
 
-import React, {useState, useEffect, useContext, createContext} from 'react'
-import { auth } from '../firebase'
+import React, {createContext, useContext, useState, useEffect, useTransition} from 'react'
 import { useNavigate } from 'react-router-dom'
-import Loading from '../components/Loading'
+import { auth } from './firebase'
 
 
 const AuthContext = createContext()
 
 export const useAuthContext = () => useContext(AuthContext)
 
-export const AuthProvider = ({children}) => {
+export const AuthContextProvider = ({children}) => {
+
     const navigate = useNavigate()
-    const [user, setUser] = useState()
+
     const [loading, setLoading] = useState(true)
-    
+    const [user, setUser] = useState()
+
     useEffect(() => {
         auth.onAuthStateChanged(user => {
             if(user){
-                navigate('/chatroom')
+
+                navigate('/home')
                 setUser(user)
-                setLoading(false)    
+                setLoading(false)
 
             } else {
+
                 navigate('/')
                 setLoading(false)
+
             }
         })
-
     }, [])
 
-    if(loading){
-        return <Loading />
-    }
-
-   
-
-
-    return(
-        <AuthContext.Provider value={user} >
+    return (
+        <AuthContext.Provider value={user}>
             {!loading && children}
         </AuthContext.Provider>
     )
+
 }
+
+
+
+
 
